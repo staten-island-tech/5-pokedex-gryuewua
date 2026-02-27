@@ -19,12 +19,14 @@ for i in data:
 typeslalala = open("./types.json", encoding="utf8")
 types = json.load(typeslalala)
 
-language = (input("Select a language: ")).lower()
+'language = (input("Select a language: ")).lower()'
 typeinput = input("Select a type: ")
 
-for t in types: 
-    if types[1] == typeinput:
-        print(t['name'][language]) and print(t['type'])
+for i in data: 
+    '''if types[t] == typeinput:'''
+    '''print(t['name'][language]) and''' 
+    if print(i['type']) == typeinput:
+        print(i['type'])
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
