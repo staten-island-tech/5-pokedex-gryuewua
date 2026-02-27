@@ -1,7 +1,8 @@
-C = "C"
-. = "."
+def occupied(t,x,y):
+    found=0
+    for i in range(t):
+        if (x[i] == "c" and y[i] == "c"):
+            found += 1
+    print(found)    
 
-N = int(input("How many spaces are there: "))
-yesterday = input("How were the spaces occupied yesterday: ").split()
-today = input("How were the spaces occupied today: ").split()
-
+occupied(5,"ccc..","c.cc.")
