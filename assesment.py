@@ -36,14 +36,14 @@ def honi(x):
     N=3
     for i in x:
         if (i == "H"):
-            y += 1
+            y  = 1
         if y == H:
             if (i == "O"):
-                y += 1
-        if y == O:
+                H += 1
+        if H == O:
             if (i == "N"):
-                y += 1
-        if y == N:        
+                O += 1
+        if O == N:        
             if (i == "I"):
                 found+=1
                 y=0
@@ -53,4 +53,4 @@ def honi(x):
                 
     print(found)
 
-honi('HHHHOOOONNNNIIII')
+honi('UAOSIDIOUAWIOUADWHWAOIDUWAOIDUNIFHOLYBUMBRONIHHHHOOOOLLLLYYYBUUUUMMMNIIII')
