@@ -21,23 +21,19 @@ language = (input("Select a language: ")).lower()
 input = input("Select a type: ")
 typeinput = input.capitalize()
 found = []
-none = 0
 
 for i in data:
     try:
         for x in i['type']:
             if i['type'][0] == typeinput: 
                 found.append(i['name'][language])
-                if (i['type'][0] == typeinput) == False:
-                    if i['type'][1] == typeinput: 
-                        found.append(i['name'][language])               
+            elif i['type'][0] != typeinput:
+                if i['type'][1] == typeinput: 
+                    found.append(i['name'][language])        
     except IndexError:
-        none + 1
+        "idk no pokemon"
 
-if none == 0:
-    print(found)
-else:
-    print(f"No {typeinput} Pokemon were found.")
+print(found)
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
