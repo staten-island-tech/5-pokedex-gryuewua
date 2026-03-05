@@ -27,9 +27,10 @@ for i in data:
         for x in i['type']:
             if i['type'][0] == typeinput: 
                 found.append(i['name'][language])
-            elif i['type'][0] != typeinput:
-                if i['type'][1] == typeinput: 
-                    found.append(i['name'][language])        
+            elif i['type'][1] == typeinput: 
+                found.append(i['name'][language])  
+            else: 
+                "idk"      
     except IndexError:
         "idk no pokemon"
 
