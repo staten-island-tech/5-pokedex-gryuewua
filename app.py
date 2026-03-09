@@ -17,25 +17,31 @@ data = json.load(pokedex)
 lang('english') """
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
-language = (input("Select a language: ")).lower()
+""" language = (input("Select a language: ")).lower()
 input = input("Select a type: ")
 typeinput = input.capitalize()
 found = []
 
 for i in data:
-    try:
-        for x in i['type']:
-            if i['type'][0] == typeinput: 
-                found.append(i['name'][language])
-            elif i['type'][1] == typeinput: 
-                found.append(i['name'][language])  
-            else: 
-                "idk"      
-    except IndexError:
-        "idk no pokemon"
+    if typeinput in i['type']:
+        found.append(i['name'][language])
+    else:
+        "idk"
 
-print(found)
+if len(found) == 0:
+    print(f"No {typeinput} Pokemon were found.")
+else: 
+    print(found) """
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
+def find_pokemon(search,language):
+    characters = list(search)
+    for i in data:
+        for x in characters:
+            if characters[x] == i['name'][language](x):
+                print(i['name'][language])
+
+find_pokemon("Char","english")
+
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
