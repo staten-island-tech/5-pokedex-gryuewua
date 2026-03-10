@@ -41,13 +41,9 @@ def find_pokemon(search,language):
         for x in characters:
             if x in i['name'][language]:
                 match += 1
-        if match == x:
+        if match == len(characters):
             print (i['name'][language]) 
             match == 0
-    print (match)
-    print (x)
-
-                
 
 find_pokemon("Char","english")
 
