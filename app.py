@@ -36,10 +36,18 @@ else:
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 def find_pokemon(search,language):
     characters = list(search)
+    match = 0
     for i in data:
         for x in characters:
-            if characters[x] == i['name'][language][x]:
-                print(i['name'][language])
+            if x in i['name'][language]:
+                match += 1
+        if match == x:
+            print (i['name'][language]) 
+            match == 0
+    print (match)
+    print (x)
+
+                
 
 find_pokemon("Char","english")
 
