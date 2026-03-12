@@ -39,7 +39,7 @@ def find_pokemon(search,language):
     match = 0
     for i in data:
         for x in characters:
-            while match != len(characters):
+            while match == len(characters):
                 if x in i['name'][language]:
                     match += 1
             else:
