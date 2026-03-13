@@ -88,4 +88,4 @@ def slots (quarters, m1, m2, m3):
     else:
         print (f"Martha plays {plays} times before going broke.")
 
-slots (77, 4, 9, 3)
+slots (48, 3, 10, 4)

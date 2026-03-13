@@ -38,15 +38,14 @@ def find_pokemon(search,language):
     characters = list(search)
     match = 0
     for i in data:
-        for x in characters:
-            while match == len(characters):
-                if x in i['name'][language]:
+        for c in characters: 
+                if c == i['name'][language][c]:
                     match += 1
-            else:
-                print (i['name'][language]) 
-                match = 0 
+                    if match == len(characters):
+                        print (i['name'][language])
 
-find_pokemon("C","english")
+                    
+find_pokemon("Ch","english")
 
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
