@@ -36,16 +36,33 @@ else:
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 def find_pokemon(search,language):
     characters = list(search)
+    found2 = []
     match = 0
+    l = 0 
     for i in data:
         for c in characters: 
-                if c == i['name'][language][c]:
+                if c == i['name'][language][l]:
                     match += 1
-                    if match == len(characters):
-                        print (i['name'][language])
+                    l += 1
+                else:
+                    l = 0
+                    match = 0
+                if match == len(characters):
+                    print (i['name'][language])
+                    found2.append(i['name'][language])
+                    l = 0
+                    match = 0
+    if len(found2) == 0:
+         print(f"No Pokemon matched your search: {search}")
 
                     
-find_pokemon("Ch","english")
-
+find_pokemon("Char","english")
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
+
+""" Check for every pokemon:
+     for "c"th letter of input:
+        if "c"th letter of input = "c"th letter of pokemon name:
+            match + 1
+            if match = amount of letters in input:
+                print name """
