@@ -1,8 +1,10 @@
 import json
 ## Open the JSON file of pokemon data
 pokedex = open("./pokedex.json", encoding="utf8")
+moves = open("./moves.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
+mdata = json.load(moves)
 'print(data[0])'
 
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
@@ -34,7 +36,8 @@ else:
     print(found) """
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
-def find_pokemon(search,language):
+
+""" def find_pokemon(search,language):
     characters = list(search)
     found2 = []
     match = 0
@@ -54,15 +57,15 @@ def find_pokemon(search,language):
                     match = 0
     if len(found2) == 0:
          print(f"No Pokemon matched your search: {search}")
-
-                    
-find_pokemon("Char","english")
+       
+find_pokemon("Char","english") """
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
-""" Check for every pokemon:
-     for "c"th letter of input:
-        if "c"th letter of input = "c"th letter of pokemon name:
-            match + 1
-            if match = amount of letters in input:
-                print name """
+def possiblemoves(pokemon):
+    for i in data:
+        if i['name']['english'] == pokemon:
+            for m in mdata:
+                if m['type'] == i['type'][0] or m['type'] == i['type'][1]:
+                    print (m['ename'])
+possiblemoves("Bulbasaur")
